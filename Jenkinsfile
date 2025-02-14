@@ -10,7 +10,7 @@ pipeline {
                     git(
                         url: 'https://github.com/eudifnai/East.git',  // Git 仓库地址
                         branch: 'master',  // 分支名称（如 main、dev）
-                        credentialsId: 'your-git-credentials-id'  // Jenkins 中配置的 Git 凭据 ID（可选）
+                        credentialsId: 'e213227f-4777-45c7-859b-43ae1fddc208'  // Jenkins 中配置的 Git 凭据 ID（可选）
                     )
                 }
             }
