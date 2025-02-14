@@ -5,13 +5,7 @@ pipeline {
         // 阶段 1：从 Git 拉取代码
         stage('Checkout') {
             steps {
-                script {
-                    echo "开始从 Git 仓库拉取代码..."
-                    git(
-                        url: 'https://github.com/eudifnai/East.git',  // Git 仓库地址
-                        branch: 'master',  // 分支名称（如 main、dev）
-                        credentialsId: 'e213227f-4777-45c7-859b-43ae1fddc208'  // Jenkins 中配置的 Git 凭据 ID（可选）
-                    )
+                echo "test Checkout..."
                 }
             }
         }
