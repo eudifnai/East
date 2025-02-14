@@ -5,8 +5,7 @@ pipeline {
         // 阶段 1：从 Git 拉取代码
         stage('Checkout') {
             steps {
-                echo "test Checkout..."
-                }
+                echo "开始从 Git 仓库拉取代码...只提示"
             }
         }
 
@@ -27,6 +26,30 @@ pipeline {
                     // 如果是自定义脚本：
                     // sh './your-build-script.sh'
                     sh 'echo "build"'
+                }
+            }
+        }
+    }
+     // 阶段 3：执行打包构建（以 Maven 为例）
+        stage('Deploy') {
+            steps {
+                when{
+                    branch 'master'
+                }
+                script {
+                    echo "发布master包..."
+                    // 如果是 Maven 项目：
+                    // sh 'mvn clean package'  // 执行 Maven 打包命令
+
+                    // 如果是 Gradle 项目：
+                    // sh './gradlew build'
+
+                    // 如果是 npm 项目：
+                    // sh 'npm install && npm run build'
+
+                    // 如果是自定义脚本：
+                    // sh './your-build-script.sh'
+                    sh 'echo "deploy"'
                 }
             }
         }
